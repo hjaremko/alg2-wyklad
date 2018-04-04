@@ -1,0 +1,86 @@
+\documentclass[a5paper,8pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[MeX]{polski}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{geometry}
+\newgeometry{tmargin=2cm, bmargin=2cm, lmargin=1.5cm, rmargin=1.5cm}
+
+\title{Algebra liniowa z geometrią 2}
+\date{}
+\frenchspacing
+
+\begin{document}
+    \maketitle
+    % \date{1 marca 2018}
+
+    \section{Terminy kolowium}
+
+    \begin{itemize}
+        \item 12.04 - pierwszy semestr
+        \item 24.05 - drugi semestr (1-11) Jurlewicz
+    \end{itemize}
+
+    \section{Przestrzenie wektorowe} % (fold)
+    \label{sec:przestrzenie_wektorowe}
+
+    \large{\textbf{Uwagi:   }}
+    $ (V, K, \oplus, \odot) $ - przestrzeń wektorowa
+
+    \begin{enumerate}
+        \item Elementy ciala $K$ nazywamy \textbf{skalarami}, a elementy zbioru $V$ \textbf{wektorami}.
+        \item Dla uproszczenia zapisu na skalarach i wektorach działania będziemy oznaczali $ +, \cdot $.
+        \item Gdy $ K = \mathbb{R} $, to przestrzeń wektorowa $ (V, \mathbb{R}, +, \cdot) $ nazywamy rzeczywistą.
+        \item Gdy $ K = \mathbb{C} $, to $ (V, \mathbb{C}, +, \cdot) $ nazywamy zespoloną.
+        \item Zamiast pisać $ (V, K, +, \cdot) $ często piszemy "$V$ jest przestrzenią wektorową".
+        \item Jeśli $ x, y \in V $, to zapis $x-y$ oznaczamy $x + (-y)$, gdzie $-y$ jest elementem przeciwnym w grupie addytywnej $(V, +)$.
+        \item Element neutralny w grupie $(V, +)$ oznaczamy $\Theta$ i nazywamy wektorem zerowym.
+    \end{enumerate}
+
+    \subsubsection{Przykład} % (fold)
+    \label{ssub:przyklad_1}
+    
+    $ (\mathbb{R}^N = \underbrace{\mathbb{R} \times, \ldots, \times \mathbb{R}}_{N}, \mathbb{R}, \oplus, \odot) $ jest przestrzenią wektorową, gdzie działania są zdefiniowane następująco:
+
+    \begin{equation*}
+        \begin{split}
+            \forall  x ={} & ( x_1, \ldots, x_N), y = (y_1, \ldots,y_N) \in \mathbb{R}^N: \\
+            & x \oplus y := (x_1+y_1,x_2+y_2,\ldots,x_N+y_N) \in \mathbb{R}^N
+        \end{split}
+    \end{equation*}
+
+    \begin{equation*}
+        \begin{split}
+            \forall  \alpha{} & \in \mathbb{R}, \forall x = ( x_1, \ldots, x_N) \in \mathbb{R}^N: \\
+            & \alpha \odot x := (\alpha x_1,\ldots,\alpha x_N) \in \mathbb{R}^N.
+        \end{split}
+    \end{equation*}
+
+    % subsubsection przykład_1_ (end)
+
+    \subsubsection{Przykład} % (fold)
+    \label{ssub:przyklad_2}
+
+    $ K $ - dowolne ciało \\
+    $ (K^N = \underbrace{K \times, \ldots, \times K}_{N}, \mathbb{R}, \oplus, \odot) $ - przestrzeń wektorowa z działaniami:
+
+    \begin{equation*}
+        \begin{split}
+            \forall  x ={} & ( x_1, \ldots, x_N), y = (y_1, \ldots,y_N) \in K^N: \\
+            & x \oplus y := (x_1+y_1,x_2+y_2,\ldots,x_N+y_N)
+        \end{split}
+    \end{equation*}
+
+    \begin{equation*}
+        \begin{split}
+            \forall  \alpha{} & \in K, \forall x = ( x_1, \ldots, x_N) \in K^N: \\
+            & \alpha \odot x := (\alpha x_1,\ldots,\alpha x_N).
+        \end{split}
+    \end{equation*}
+    
+    % subsubsection przykład_2 (end)
+
+    % section przestrzenie_wektorowe (end)
+
+\end{document}
