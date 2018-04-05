@@ -3,6 +3,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[MeX]{polski}
 \usepackage{amsmath}
+\usepackage{amsthm}
 \usepackage{amsfonts}
 \usepackage{geometry}
 \newgeometry{tmargin=2cm, bmargin=2cm, lmargin=1.5cm, rmargin=1.5cm}
@@ -11,8 +12,16 @@
 \date{}
 \frenchspacing
 
+\newtheorem{example}{Przykład}[section]
+\newtheorem{lemat}{Lemat}[section]
+\newtheorem{definition}{Definicja}[section]
+\newtheorem{theorem}{Twierdzenie}[section]
+\newtheorem*{conclusion}{Wniosek}
+
 \begin{document}
     \maketitle
+    % \tableofcontents
+    % \pagebreak
     % \date{1 marca 2018}
 
     \section{Terminy kolowium}
@@ -38,49 +47,177 @@
         \item Element neutralny w grupie $(V, +)$ oznaczamy $\Theta$ i nazywamy wektorem zerowym.
     \end{enumerate}
 
-    \subsubsection{Przykład} % (fold)
-    \label{ssub:przyklad_1}
+    \begin{example}
+        \hfill \break 
+        $ (\mathbb{R}^N = \underbrace{\mathbb{R} \times \ldots \times \mathbb{R}}_{N}, \mathbb{R}, \oplus, \odot) $ jest przestrzenią wektorową, gdzie działania są zdefiniowane następująco:
+
+        \begin{equation*}
+            \begin{split}
+                \forall  x ={} & ( x_1, \ldots, x_N), y = (y_1, \ldots,y_N) \in \mathbb{R}^N: \\
+                & x \oplus y := (x_1+y_1,x_2+y_2,\ldots,x_N+y_N) \in \mathbb{R}^N
+            \end{split}
+        \end{equation*}
+
+        \begin{equation*}
+            \begin{split}
+                \forall  \alpha{} & \in \mathbb{R}, \forall x = ( x_1, \ldots, x_N) \in \mathbb{R}^N: \\
+                & \alpha \odot x := (\alpha x_1,\ldots,\alpha x_N) \in \mathbb{R}^N.
+            \end{split}
+        \end{equation*}
+    \end{example}
+
+
+    \begin{example}
+        \hfill \break 
+        $ K $ - dowolne ciało \\
+        $ (K^N = \underbrace{K \times \ldots \times K}_{N}, \mathbb{R}, \oplus, \odot) $ - przestrzeń wektorowa z działaniami:
+
+        \begin{equation*}
+            \begin{split}
+                \forall  x ={} & ( x_1, \ldots, x_N), y = (y_1, \ldots,y_N) \in K^N: \\
+                & x \oplus y := (x_1+y_1,x_2+y_2,\ldots,x_N+y_N)
+            \end{split}
+        \end{equation*}
+
+        \begin{equation*}
+            \begin{split}
+                \forall  \alpha{} & \in K, \forall x = ( x_1, \ldots, x_N) \in K^N: \\
+                & \alpha \odot x := (\alpha x_1,\ldots,\alpha x_N).
+            \end{split}
+        \end{equation*}
+    \end{example}
+
+    % \begin{example}
+
+    % \end{example}
+
+    % \begin{example}
+
+    % \end{example}
+
+    % \begin{example}
+
+    % \end{example}
     
-    $ (\mathbb{R}^N = \underbrace{\mathbb{R} \times, \ldots, \times \mathbb{R}}_{N}, \mathbb{R}, \oplus, \odot) $ jest przestrzenią wektorową, gdzie działania są zdefiniowane następująco:
+    % \begin{lemat}
 
-    \begin{equation*}
-        \begin{split}
-            \forall  x ={} & ( x_1, \ldots, x_N), y = (y_1, \ldots,y_N) \in \mathbb{R}^N: \\
-            & x \oplus y := (x_1+y_1,x_2+y_2,\ldots,x_N+y_N) \in \mathbb{R}^N
-        \end{split}
-    \end{equation*}
+    % \end{lemat}
 
-    \begin{equation*}
-        \begin{split}
-            \forall  \alpha{} & \in \mathbb{R}, \forall x = ( x_1, \ldots, x_N) \in \mathbb{R}^N: \\
-            & \alpha \odot x := (\alpha x_1,\ldots,\alpha x_N) \in \mathbb{R}^N.
-        \end{split}
-    \end{equation*}
+    % \begin{lemat}
 
-    % subsubsection przykład_1_ (end)
+    % \end{lemat}
 
-    \subsubsection{Przykład} % (fold)
-    \label{ssub:przyklad_2}
+    % \begin{lemat}
 
-    $ K $ - dowolne ciało \\
-    $ (K^N = \underbrace{K \times, \ldots, \times K}_{N}, \mathbb{R}, \oplus, \odot) $ - przestrzeń wektorowa z działaniami:
+    % \end{lemat}
 
-    \begin{equation*}
-        \begin{split}
-            \forall  x ={} & ( x_1, \ldots, x_N), y = (y_1, \ldots,y_N) \in K^N: \\
-            & x \oplus y := (x_1+y_1,x_2+y_2,\ldots,x_N+y_N)
-        \end{split}
-    \end{equation*}
+    % \begin{lemat}
 
-    \begin{equation*}
-        \begin{split}
-            \forall  \alpha{} & \in K, \forall x = ( x_1, \ldots, x_N) \in K^N: \\
-            & \alpha \odot x := (\alpha x_1,\ldots,\alpha x_N).
-        \end{split}
-    \end{equation*}
-    
-    % subsubsection przykład_2 (end)
+    % \end{lemat}
 
     % section przestrzenie_wektorowe (end)
+
+    \section{Podprzestrzenie wektorowe} % (fold)
+    \label{sec:podprzestrzenie_wektorowe}
+
+    % \begin{definition}
+
+    % \end{definition}
+
+    % \begin{theorem}
+
+    % \end{theorem}
+
+    % \begin{example}
+
+    % \end{example}
+
+    % \begin{example}
+
+    % \end{example}
+
+    % \begin{example}
+
+    % \end{example}
+
+    % \begin{example}
+
+    % \end{example}
+
+    % \begin{theorem}
+
+    % \end{theorem}
+
+    % \begin{definition}
+
+    % \end{definition}
+
+    % \begin{definition}
+
+    % \end{definition}
+
+    % \begin{example}
+
+    % \end{example}
+    
+    % section podprzestrzenie_wektorowe (end)
+
+    \section{Liniowa niezależność wektorów} % (fold)
+    \label{sec:liniowa_niezależność_wektorów}
+    
+    % section liniowa_niezależność_wektorów (end)
+
+    \section{Baza} % (fold)
+    \label{sec:baza}
+    
+    % section baza (end)
+
+    \section{Wymiar przestrzeni wektorowej} % (fold)
+    \label{sec:wymiar_przestrzeni_wektorowej}
+    
+    \begin{theorem}
+        Wszystkie bazy danej przestrzeni wektorowej są równoliczne.
+    \end{theorem}
+
+    \begin{conclusion}
+        ( twierdzenie Steinera ) \\
+        Jeśli pewna baza przestrzeni $ V $ ma $ n $ elementów, to każda inna baza tej przestrzeni ma też $ n $ elementów.
+    \end{conclusion}
+
+    \begin{definition} \hfill
+        \begin{itemize}
+            \item Jeśli przestrzeń wektorowa $ V $ ma skończoną bazę, to mówimy, że jest skończenie wymiarowa i oznaczamy $ dim V $.
+            \item Jeśli przestrzeń V ma nieskończoną bazę, to mówimy, że jest nieskończenie wymiarowa i wówczas oznaczamy $ dim V = \infty $.
+        \end{itemize}
+    \end{definition}
+
+    \large{\textbf{Uwaga:}}
+    Powyższa definicja jest poprawna ponieważ wszystkie bazy są równoliczne.
+
+
+    \begin{theorem} \hfill \\\\
+        \textbf{Założenia: } $ V $ w przestrzeni wektorowej, $ V_1 \subseteq V $ - podprzestrzeń
+        \textbf{Teza: }
+        \begin{enumerate}
+            \item $ dim V_1 \leq dim V $
+            \item Jeśli $ dim V_1 = dim < \infty $, to $ V = V_1 $ ??
+        \end{enumerate}
+    \end{theorem}
+
+    \large{\textbf{Dowód:}} \\
+    \begin{enumerate}
+        \item Niech $B$ będzie bazą $ V_1 \implies dim V_1 = \#B $ \\
+              $ \implies B $ jest zbiorem wektorów liniowo niezależnych w $ V $ \\
+              $ \implies B $ można rozszerzyć do bazy \\
+              $ A \supseteq B $ w $ V $ \\
+              $ dim V = \#A \geq \#B = dim V_1 $
+        \item Niech $B$ będzie bazą w $V_1$ \\
+              $ \implies B $ mogę rozszerzyć do bazy $ A \geq B $ w $V$ \\
+              ale  $ \#A = \#B < \infty \implies A = B $ \\
+
+              $ V_1 = lin( B ) = lin( A ) = V \\ \Box $
+    \end{enumerate}
+
+    % section wymiar_przestrzeni_wektorowej (end)
 
 \end{document}
