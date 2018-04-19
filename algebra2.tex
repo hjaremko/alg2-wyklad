@@ -5,8 +5,10 @@
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{amsfonts}
+\usepackage{cases}
 \usepackage{geometry}
 \newgeometry{tmargin=2cm, bmargin=2cm, lmargin=1.5cm, rmargin=1.5cm}
+\setlength{\parindent}{0cm}
 
 \title{Algebra liniowa z geometrią 2}
 \date{}
@@ -17,6 +19,12 @@
 \newtheorem{definition}{Definicja}[section]
 \newtheorem{theorem}{Twierdzenie}[section]
 \newtheorem*{conclusion}{Wniosek}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\newcommand\defeq{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily def}}}{=}}}
+\newcommand\ass{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily zał}}}{=}}}
+\newcommand\one{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily 1)}}}{=}}}
+\newcommand\two{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily 2)}}}{=}}}
 
 \begin{document}
     \maketitle
@@ -48,8 +56,8 @@
     \end{enumerate}
 
     \begin{example}
-        \hfill \break 
-        $ (\mathbb{R}^N = \underbrace{\mathbb{R} \times \ldots \times \mathbb{R}}_{N}, \mathbb{R}, \oplus, \odot) $ jest przestrzenią wektorową, gdzie działania są zdefiniowane następująco:
+        \hfill \break
+        $ (\mathbb{R}^N = \underbrace{\mathbb{R} \times \ldots \times \mathbb{R}}_{N}, \mathbb{R}, \oplus, \odot) $ jest przestrzenią wektorową, gdzie działania są zdefiniowane następująco:
 
         \begin{equation*}
             \begin{split}
@@ -68,7 +76,7 @@
 
 
     \begin{example}
-        \hfill \break 
+        \hfill \break
         $ K $ - dowolne ciało \\
         $ (K^N = \underbrace{K \times \ldots \times K}_{N}, \mathbb{R}, \oplus, \odot) $ - przestrzeń wektorowa z działaniami:
 
@@ -98,7 +106,7 @@
     % \begin{example}
 
     % \end{example}
-    
+
     % \begin{lemat}
 
     % \end{lemat}
@@ -159,22 +167,22 @@
     % \begin{example}
 
     % \end{example}
-    
+
     % section podprzestrzenie_wektorowe (end)
 
     \section{Liniowa niezależność wektorów} % (fold)
     \label{sec:liniowa_niezależność_wektorów}
-    
+
     % section liniowa_niezależność_wektorów (end)
 
     \section{Baza} % (fold)
     \label{sec:baza}
-    
-    % section baza (end)
 
+    % section baza (end)
+    \newpage
     \section{Wymiar przestrzeni wektorowej} % (fold)
     \label{sec:wymiar_przestrzeni_wektorowej}
-    
+
     \begin{theorem}
         Wszystkie bazy danej przestrzeni wektorowej są równoliczne.
     \end{theorem}
@@ -204,20 +212,186 @@
         \end{enumerate}
     \end{theorem}
 
-    \large{\textbf{Dowód:}} \\
+    \large{\textbf{Dowód.}} \\
     \begin{enumerate}
-        \item Niech $B$ będzie bazą $ V_1 \implies dim V_1 = \#B $ \\
+        \item Niech $B$ będzie bazą $ V_1 \implies dim V_1 = \sharp B $ \\
               $ \implies B $ jest zbiorem wektorów liniowo niezależnych w $ V $ \\
               $ \implies B $ można rozszerzyć do bazy \\
               $ A \supseteq B $ w $ V $ \\
-              $ dim V = \#A \geq \#B = dim V_1 $
+              $ dim V = \sharp A \geq \sharp B = dim V_1 $
         \item Niech $B$ będzie bazą w $V_1$ \\
               $ \implies B $ mogę rozszerzyć do bazy $ A \geq B $ w $V$ \\
-              ale  $ \#A = \#B < \infty \implies A = B $ \\
+              ale  $ \sharp A = \sharp B < \infty \implies A = B $ \\
 
-              $ V_1 = lin( B ) = lin( A ) = V \\ \Box $
+              $ V_1 = lin( B ) = lin( A ) = V  $
     \end{enumerate}
 
+    \begin{flushright}
+        $ \Box $
+    \end{flushright}
+
+
     % section wymiar_przestrzeni_wektorowej (end)
+
+	\section{Odwzrorowania liniowe}
+    \label{sec:odwzrorowania_liniowe}
+
+    \begin{definition} \hfill \\\\
+        Niech $ V $ i $ W $ będą przestrzeniami wektorowymi nad ciałem $ K $.
+        Mówimy, że odwzroowanie $ \varphi: V \mapsto W $ jest \textbf{liniowe}, jeśli
+
+        \begin{equation*}
+            \forall x, y \in V, \alpha, \beta \in K: \varphi(\alpha x + \beta y)
+            = \alpha \varphi(x) + \beta \varphi (y)
+        \end{equation*}
+
+    \end{definition}
+
+    \begin{theorem}
+        $ \varphi : V \mapsto W $ jest odwzorowaniem liniowym $\Longleftrightarrow$
+
+        \begin{numcases}{}
+            \forall x,y \in V: \varphi(x + y) = \varphi(x) + \varphi(y) \\
+            \forall \alpha \in K, x \in V: \varphi( \alpha x ) = \alpha \varphi (x)
+        \end{numcases}
+    \end{theorem}
+
+    \large{\textbf{Dowód.}} \\
+    "$ \Longleftarrow $" \\
+    \begin{equation*}
+        \varphi( \alpha x + \beta y ) \one \varphi( \alpha x ) + \varphi( \beta y )
+        \two \alpha \varphi(x) + \beta \varphi(y)
+    \end{equation*}
+
+    "$ \Longrightarrow $" \\
+        \begin{itemize}
+            \item
+                $ \varphi(x + y) = \varphi (1 \cdot x + 1 \cdot y )
+                \ass 1 \cdot \varphi(x) + 1 \cdot \varphi(y)
+                = \varphi(x) + \varphi(y) $
+            \item
+                $ \varphi(\alpha x) = \varphi( \alpha x + 0 \cdot x)
+                \ass \alpha \varphi(x) + 0 \cdot \varphi(x)
+                = \alpha \varphi(x) + \Theta = \alpha \varphi(x) $
+        \end{itemize}
+        \begin{flushright}
+            $ \Box $
+        \end{flushright}
+
+    \begin{theorem}
+        $ \varphi: V \mapsto W $ jest liniowe $ \Longleftrightarrow $ \\
+        \begin{equation*}
+            \forall k \in \mathbb{N}, \forall v_1, \ldots, v_k \in V,
+            \forall \alpha_1, \ldots, \alpha_k \in K:
+            \varphi(\sum_{i = 1}^{k} \alpha_i v_i ) = \sum_{i = 1}^{k} \alpha_i \varphi(v_1)
+        \end{equation*}
+    \end{theorem}
+
+    \large{\textbf{Dowód.}} indukcją matematyczną na $k$ (ćw.)
+
+    \begin{theorem} \hfill \\\\
+        Jeśli $ \varphi: V \mapsto W $ jest odwzrowaniem liniowym to
+        $ \varphi(\Theta_v) = \Theta_w $
+    \end{theorem}
+
+    \large{\textbf{Dowód.}} \\
+    \begin{equation*}
+        \varphi(\Theta_v) = \varphi(0 \cdot v) = 0 \cdot \varphi(v) = \Theta_w
+    \end{equation*}
+
+    \begin{flushright}
+        $ \Box $
+    \end{flushright}
+
+    \begin{example}
+    \end{example}
+
+    \begin{enumerate}
+        \item
+            $ id_v: V \ni v \longmapsto v \in V $ jest odwzorowaniem liniowym
+            \begin{equation*}
+                id_v(\alpha v_1 + \beta v_2) = \alpha v_1 + \beta v_2
+                = \alpha \cdot id_v (v_1) + \beta \cdot id(v_2)
+            \end{equation*}
+        \item
+            \textbf{Odwzorowanie zerowe} \\
+            \begin{equation*}
+                \varphi: V \ni v \longmapsto \Theta_w \in W
+            \end{equation*}
+            \begin{equation*}
+                \Theta(\alpha v_1 + \beta v_2) = \Theta_w
+                = \alpha \cdot \Theta_w + \beta \cdot \Theta_w
+                = \alpha \varphi(v_1) + \beta \varphi(v_2)
+            \end{equation*}
+        \item
+            Niech $ V = V_1 \oplus V_2 $ \\
+            Wówczas $ \forall ~v \in V ~ \exists! ~ v_1 \in V_1 ~ \exists! ~ v_1 \in V_2:
+            v = v_1 + v_2 $ \\
+
+            Definiujemy odwzorowanie $ \pi_1 : V \ni v \longmapsto v_1 \in V_1 $ \\
+            \tab - rzutowanie na $ V_1 $ w kierunku $ V_2 $ \\
+
+            Analogicznie $ \pi_2 : V \ni v \longmapsto v_2 \in V_2 $ \\
+            \tab - rzutowanie na $ V_2 $ w kierunku $ V_1 $ \\
+
+            \newpage
+            Udowodnimy, że $\pi_1$ jest liniowe (dowód dla $\pi_2$ analogiczny).\\\\
+            Niech $ x, y \in V, \alpha , \beta \in K $\\
+            Wówczas \\
+            \begin{equation*}
+                x = x_1 + x_2 \\
+            \end{equation*}
+            \begin{equation*}
+                y = y_1 + y_2
+            \end{equation*}
+                gdzie $ x_1, y_1 \in V_1, x_2, y_2 \in V_2 $
+
+            \begin{equation*}
+                \begin{aligned}
+                    \pi_1 \overbrace{(\alpha x + \beta y)}^{v} &= \pi_1 ( \alpha(x_1 + x_2) + \beta(y_1 + y_2))\\
+                    & = \pi_1( \underbrace{( \alpha x_1 + \beta y_1 )}_{\in V_1}
+                        + \underbrace{( \alpha x_2 + \beta y_2 )}_{\in V_2})\\
+                    & = \alpha x_1 + \beta y_1 \\
+                    & = \alpha \pi_1(x) + \beta \pi_1(y)
+                \end{aligned}
+            \end{equation*}
+
+            <<jakis rysuneczek tutaj>>
+        \item
+            Niech $W$ będzie podprzestrzenią wektorową w $V$\\
+            \begin{equation*}
+                \kappa: W \ni w \longmapsto w \in V - zanurzenie
+            \end{equation*}
+
+            Przykład <<rysuneczek dwie osie i R do 2>>
+
+            \begin{equation*}
+                \mathbb{R} \ni x \longmapsto (x,0) \in \mathbb{R}^2
+            \end{equation*}
+            \begin{equation*}
+                \mathbb{R} \times \{0\} \ni (x,0) \longmapsto (x,0) \in \mathbb{R}^2
+            \end{equation*}
+        \item
+            $ V $ - przestrzeń wektorowa, $ \lambda \in K $
+        \item
+            $ I $ - przedział w $ \mathbb{R} $
+    \end{enumerate}
+
+    % Jeśli $ V = W $, to $ \varphi $ nazywamy \textbf{endomorfizmem}.\\
+    % Jeśli $ V = W $, $ \varphi $ jest bijekcją, to $ \varphi $ nazywamy
+    % \textbf{automorfizmem}.
+    %
+    % \newpage
+    % \begin{example}
+    % \end{example}
+    %
+    % \begin{enumerate}
+    %     \item
+    %         $ id_v $ - izomorfizm (automorfizm)
+    %     \item
+    %         Odwzorowanie zerowe $ \varphi: V \longmapsto W $ \\
+    %         \tab jest monoformizmem $ \Longleftrightarrow V = {\Theta} $\\
+    %         \tab jest epimorfizmem $ \Longleftrightarrow W = {\Theta} $
+    % \end{enumerate}
 
 \end{document}
