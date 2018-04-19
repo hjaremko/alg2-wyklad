@@ -233,12 +233,12 @@
 
     % section wymiar_przestrzeni_wektorowej (end)
 
-	\section{Odwzrorowania liniowe}
-    \label{sec:odwzrorowania_liniowe}
+	\section{Odwzorowania liniowe}
+    \label{sec:odwzorowania_liniowe}
 
     \begin{definition} \hfill \\\\
         Niech $ V $ i $ W $ będą przestrzeniami wektorowymi nad ciałem $ K $.
-        Mówimy, że odwzroowanie $ \varphi: V \mapsto W $ jest \textbf{liniowe}, jeśli
+        Mówimy, że odwzorowanie $ \varphi: V \mapsto W $ jest \textbf{liniowe}, jeśli
 
         \begin{equation*}
             \forall x, y \in V, \alpha, \beta \in K: \varphi(\alpha x + \beta y)
@@ -372,9 +372,26 @@
                 \mathbb{R} \times \{0\} \ni (x,0) \longmapsto (x,0) \in \mathbb{R}^2
             \end{equation*}
         \item
-            $ V $ - przestrzeń wektorowa, $ \lambda \in K $
+            $ V $ - przestrzeń wektorowa, $ \lambda \in K $\\\\
+            Odwzorowanie $ \varphi_\lambda: v \ni v \longmapsto \lambda v \in V $
+            jest liniowe i nazywamy je \textbf{homotetią}.
         \item
-            $ I $ - przedział w $ \mathbb{R} $
+            $ I $ - przedział w $ \mathbb{R} $ \\
+            \begin{equation*}
+                \mathcal{C}^\infty(I) = \{ f: I \longmapsto \mathbb{R}:
+                ~f~~jest~~w~~\mathcal{C}^\infty \}
+            \end{equation*}
+
+            \begin{equation*}
+                F:~~ \mathcal{C}^\infty(I) \ni f \longmapsto f' \in \mathcal{C}^\infty(I)
+            \end{equation*}
+
+            \begin{tabbing}
+                Ponieważ \= $ (f+g)' = f' + g' $ \\
+                         \> $ (\alpha f)' = \alpha \cdot f' $
+            \end{tabbing}
+
+            Zatem $F$ jest odwzorowaniem liniowym.
     \end{enumerate}
 
     % Jeśli $ V = W $, to $ \varphi $ nazywamy \textbf{endomorfizmem}.\\
