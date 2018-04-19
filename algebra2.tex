@@ -7,6 +7,7 @@
 \usepackage{amsfonts}
 \usepackage{cases}
 \usepackage{geometry}
+\usepackage{enumitem}
 \newgeometry{tmargin=2cm, bmargin=2cm, lmargin=1.5cm, rmargin=1.5cm}
 \setlength{\parindent}{0cm}
 
@@ -194,8 +195,8 @@
 
     \begin{definition} \hfill
         \begin{itemize}
-            \item Jeśli przestrzeń wektorowa $ V $ ma skończoną bazę, to mówimy, że jest skończenie wymiarowa i oznaczamy $ dim V $.
-            \item Jeśli przestrzeń V ma nieskończoną bazę, to mówimy, że jest nieskończenie wymiarowa i wówczas oznaczamy $ dim V = \infty $.
+            \item Jeśli przestrzeń wektorowa $ V $ ma skończoną bazę, to mówimy, że jest skończenie wymiarowa i oznaczamy $ \dim V $.
+            \item Jeśli przestrzeń V ma nieskończoną bazę, to mówimy, że jest nieskończenie wymiarowa i wówczas oznaczamy $ \dim V = \infty $.
         \end{itemize}
     \end{definition}
 
@@ -207,18 +208,18 @@
         \textbf{Założenia: } $ V $ w przestrzeni wektorowej, $ V_1 \subseteq V $ - podprzestrzeń
         \textbf{Teza: }
         \begin{enumerate}
-            \item $ dim V_1 \leq dim V $
-            \item Jeśli $ dim V_1 = dim < \infty $, to $ V = V_1 $ ??
+            \item $ \dim V_1 \leq \dim V $
+            \item Jeśli $ \dim V_1 = \dim < \infty $, to $ V = V_1 $ ??
         \end{enumerate}
     \end{theorem}
 
     \large{\textbf{Dowód.}} \\
     \begin{enumerate}
-        \item Niech $B$ będzie bazą $ V_1 \implies dim V_1 = \sharp B $ \\
+        \item Niech $B$ będzie bazą $ V_1 \implies \dim V_1 = \sharp B $ \\
               $ \implies B $ jest zbiorem wektorów liniowo niezależnych w $ V $ \\
               $ \implies B $ można rozszerzyć do bazy \\
               $ A \supseteq B $ w $ V $ \\
-              $ dim V = \sharp A \geq \sharp B = dim V_1 $
+              $ \dim V = \sharp A \geq \sharp B = \dim V_1 $
         \item Niech $B$ będzie bazą w $V_1$ \\
               $ \implies B $ mogę rozszerzyć do bazy $ A \geq B $ w $V$ \\
               ale  $ \sharp A = \sharp B < \infty \implies A = B $ \\
@@ -306,7 +307,7 @@
     \begin{example}
     \end{example}
 
-    \begin{enumerate}
+    \begin{enumerate}[label=\textbf{\arabic*})]
         \item
             $ id_v: V \ni v \longmapsto v \in V $ jest odwzorowaniem liniowym
             \begin{equation*}
@@ -394,21 +395,97 @@
             Zatem $F$ jest odwzorowaniem liniowym.
     \end{enumerate}
 
-    % Jeśli $ V = W $, to $ \varphi $ nazywamy \textbf{endomorfizmem}.\\
-    % Jeśli $ V = W $, $ \varphi $ jest bijekcją, to $ \varphi $ nazywamy
-    % \textbf{automorfizmem}.
-    %
-    % \newpage
-    % \begin{example}
-    % \end{example}
-    %
-    % \begin{enumerate}
-    %     \item
-    %         $ id_v $ - izomorfizm (automorfizm)
-    %     \item
-    %         Odwzorowanie zerowe $ \varphi: V \longmapsto W $ \\
-    %         \tab jest monoformizmem $ \Longleftrightarrow V = {\Theta} $\\
-    %         \tab jest epimorfizmem $ \Longleftrightarrow W = {\Theta} $
-    % \end{enumerate}
+    \begin{definition}
+        $ \varphi: v \longmapsto W $ - liniowe
+    \end{definition}
+
+    \begin{enumerate}[label=(\alph*)]
+        \item
+            $\varphi$ jest izomorfizmem, jeśli $\varphi$ jest bijekcją.
+        \item
+            $\varphi$ jest monoformizmem, jeśli $\varphi$ jest iniekcją.
+        \item
+            $\varphi$ jest epimorfizmem, jeśli $\varphi$ jest surjekcją.
+    \end{enumerate}
+
+    Jeśli $ V = W $, to $ \varphi $ nazywamy \textbf{endomorfizmem}.\\
+    Jeśli $ V = W $, $ \varphi $ jest bijekcją, to $ \varphi $ nazywamy
+    \textbf{automorfizmem}.
+
+    \begin{example}
+    \end{example}
+
+    \begin{enumerate}[label=\textbf{\arabic*})]
+        \item
+            $ id_v $ - izomorfizm (automorfizm)
+        \item
+            Odwzorowanie zerowe $ \varphi: V \longmapsto W $ \\
+            \tab jest monoformizmem $ \Longleftrightarrow V = {\Theta} $\\
+            \tab jest epimorfizmem $ \Longleftrightarrow W = {\Theta} $
+        \item
+            $V = V_1 \oplus V_2 $ \tab
+            $\pi_1: V \longmapsto V_1 $ rzutowanie\\
+            $\pi_1$ jest epimorfizmem, bo $ \forall~ v_1 \in V_1 : \pi_1(v_1) = v_1 $
+        \item
+            Zanurzenie $\varphi$ i $ W \ni w \longmapsto w \in V $\\
+            \tab jest monoformizmem ...\\
+            \tab jest epimorfizmem $ \Longleftrightarrow V = W $
+        \item
+            Homotetia $ \varphi: V \ni v \longmapsto \lambda v \in V $\\\\
+            Gdy $ \lambda \neq 0 $, to $ \varphi $ jest monomorfizmem, bo
+            $ \varphi(v_1) = \varphi(v_2) $
+
+            \begin{equation*}
+                \begin{aligned}
+                    \Longrightarrow & \lambda v_1 = \lambda v_2
+                    \bigg/ \lambda^{-1}, ~~bo~~ \lambda \neq 0 \\
+                    & \lambda^{-1} \lambda v_1 = \lambda^{-1} \lambda v_2\\
+                    & 1 \cdot v_1 = 1 \cdot v_2\\
+                    & v_1 = v_2 \\
+                    & \Longrightarrow \varphi ~~-~~monoformizm
+                \end{aligned}
+            \end{equation*}
+
+            Gdy $\lambda \neq 0 $ to $\varphi$ jest epimorfizmem, bo
+
+            \begin{equation*}
+                \forall ~w \in V ~\exists~v \in V: \varphi(v) = w
+            \end{equation*}
+
+            Niech $ w \in V $
+
+            \begin{equation*}
+                    v := \lambda^{-1} w \\
+            \end{equation*}
+            \begin{equation*}
+                \varphi(v) = \lambda v = \lambda \lambda^{-1} w = w
+            \end{equation*}
+
+        \item
+            $ F:~~ \mathcal{C}^\infty(I) \ni f \longmapsto f' \in \mathcal{C}^\infty(I) $ \\
+            -- nie jest monomorfizmem, bo $ (2x+1)' = (2x+2)' $ \\
+            -- jest epimorfizmem, bo każda funkcja ciągła ma pierwotną
+    \end{enumerate}
+
+    \newpage
+    \begin{theorem} \hfill \\
+        Niech $ V, W $ - przestrzenie wektorowe nad ciałem $ K $ \\
+        \tab $v_1, \ldots, v_n$ - baza $V$ \\
+        \tab $w_1, \ldots, w_n$ - dowolne wektory $W$ \\
+        Wówczas istnieje dokładnie jedno odwzorowanie liniowe \\
+        \tab $ \varphi : V \longmapsto W $ takie, że $ \varphi(v_1) = w_i ~~ \forall ~i = 1, \ldots, n $
+    \end{theorem}
+
+    \large{\textbf{Heureza.}} \\
+    Jak należy zdefiniować $ \varphi $, aby było liniowe? \\
+    Niech $ v \in V $. Ponieważ $ v_1, \ldots, v_n $ są bazą $ V $, to
+    \begin{equation*}
+        \exists!~ \alpha_1, \ldots, \alpha_n \in K: v = \sum_{i = 1}^{n} \alpha_i v_i
+    \end{equation*}
+    Ponieważ $ \varphi $ ma być liniowe, to
+    \begin{equation*}
+        \varphi(v) = \varphi( \sum_{i = 1}^{n} \alpha_i v_i )
+        = \sum_{i = 1}^{n} \alpha_i \underbrace{\varphi(v_i)}_{w_i} = \sum_{i = 1}^{n} \alpha_i w_i
+    \end{equation*}
 
 \end{document}
