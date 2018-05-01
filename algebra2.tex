@@ -255,7 +255,40 @@
         $ \Box $
     \end{flushright}
 
+    \begin{theorem}
+    \end{theorem}
+    \textbf{Założenia:} $ V $ - przestrzeń wektorowa, $ \dim V = n $ \\
+    \textbf{Twierdzenie:} następujące wnioski są równoważne
 
+    \begin{enumerate}
+        \item
+            wektory $ v_1, \dots, v_n $ są bazą w $ V $
+        \item
+            wektory $ v_1, \dots, v_n $ są liniowo liniowo niezależne
+        \item
+            wektory $ v_1, \dots, v_n $ generują $ V $
+    \end{enumerate}
+
+    \large{\textbf{Dowód.}} \\
+    $ 1) \Longrightarrow 2) $ oczywiste \\
+    $ 2) \Longrightarrow 1) $ wektory $ v_1, \dots, v_n $ można rozszerzyć
+    do bazy, ale każda baza ma $n$ elementów $ \Longrightarrow v_1, \dots, v_n $ są bazą \\
+    $ 1) \Longrightarrow 3) $ oczywiste \\
+    $ 3) \Longrightarrow 1) $ z wektorów  $ v_1, \dots, v_n $ można wybrać bazę, ale
+    każda baza ma $n$ elementów $ \Longrightarrow v_1, \dots, v_n $ są bazą \\
+
+    \begin{example} \hfill
+        \begin{itemize}
+            \item $ \dim \{\Theta\} = 0 $
+            \item $ \dim \mathbb{R}_n[x] = n + 1 $, baza = $ 1, x, \ldots, x^n $
+            \item $ \dim \mathbb{R}[x] = \infty $
+            \item $ \dim (\mathbb{R}, \mathbb{R}, +, \cdot) = \infty $
+            \item $ \dim (\mathbb{C}, \mathbb{R}, +, \cdot) = 2 $
+            \item $ \dim (\mathbb{C}^n, \mathbb{C}, +, \cdot) = n $
+            \item $ \dim (\mathbb{C}^n, \mathbb{R}, +, \cdot) = 2n $
+            \item $ \dim (\mathbb{R}^\infty, \mathbb{R}, +, \cdot) = \infty $
+        \end{itemize}
+    \end{example}
     % section wymiar_przestrzeni_wektorowej (end)
     \newpage
 
