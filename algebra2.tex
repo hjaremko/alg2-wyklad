@@ -96,6 +96,30 @@
         \end{equation*}
     \end{example}
 
+    \begin{example} \hfill \break
+        $ ( K, +, \cdot ) $ - ciało
+
+        \begin{equation*}
+            K^\infty := \{ \{x_n\}_{n \in \mathbb{N} } : \forall~n: x_n \in K \}
+        \end{equation*}
+
+        $ (K^\infty, K, \oplus, \odot ) $ - jest przestrzenią wektorową z działaniami
+
+        \begin{equation*}
+            \forall~\{x_n\}, \{y_n\} \in K^\infty: \{x_n\} \oplus \{y_n\} := \{z_n\}
+        \end{equation*}
+        \begin{equation*}
+            gdzie~~~~ \forall~n: z_n := x_n + y_n
+        \end{equation*}
+        \begin{equation*}
+            \forall~\alpha \in K ~\forall \{\alpha_n\} \in K^\infty :
+            \alpha \odot \{x_n\} := \{z_n\}
+        \end{equation*}
+        \begin{equation*}
+            gdzie~~~~ \forall~n: z_n := \alpha \cdot x_n
+        \end{equation*}
+    \end{example}
+
     % \begin{example}
 
     % \end{example}
@@ -233,6 +257,7 @@
 
 
     % section wymiar_przestrzeni_wektorowej (end)
+    \newpage
 
 	\section{Odwzorowania liniowe}
     \label{sec:odwzorowania_liniowe}
@@ -290,6 +315,8 @@
 
     \large{\textbf{Dowód.}} indukcją matematyczną na $k$ (ćw.)
 
+    \newpage
+
     \begin{theorem} \hfill \\\\
         Jeśli $ \varphi: V \mapsto W $ jest odwzrowaniem liniowym to
         $ \varphi(\Theta_v) = \Theta_w $
@@ -336,6 +363,7 @@
             \tab - rzutowanie na $ V_2 $ w kierunku $ V_1 $ \\
 
             \newpage
+
             Udowodnimy, że $\pi_1$ jest liniowe (dowód dla $\pi_2$ analogiczny).\\\\
             Niech $ x, y \in V, \alpha , \beta \in K $\\
             Wówczas \\
@@ -578,7 +606,7 @@
         \end{aligned}
     \end{equation*}
 
-    \textbf{Obrazem} odwzorowania liniowego $ \varphi $nazywamy
+    \textbf{Obrazem} odwzorowania liniowego $ \varphi $ nazywamy
 
     \begin{equation*}
         \begin{aligned}
