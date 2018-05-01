@@ -22,7 +22,7 @@
 \newtheorem*{conclusion}{Wniosek}
 
 \newcommand\tab[1][1cm]{\hspace*{#1}}
-\newcommand\defeq{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily def}}}{=}}}
+\newcommand\defeq[1]{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily def~{#1}}}}{=}}}
 \newcommand\ass{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily zał}}}{=}}}
 \newcommand\one{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily 1)}}}{=}}}
 \newcommand\two{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily 2)}}}{=}}}
@@ -486,6 +486,61 @@
     \begin{equation*}
         \varphi(v) = \varphi( \sum_{i = 1}^{n} \alpha_i v_i )
         = \sum_{i = 1}^{n} \alpha_i \underbrace{\varphi(v_i)}_{w_i} = \sum_{i = 1}^{n} \alpha_i w_i
+    \end{equation*}
+
+    \large{\textbf{Dowód.}} \\
+    Niech $ v \in V $. Wówczas
+
+    \begin{equation*}
+        \exists ! ~~ \alpha_1, \ldots, \alpha_n \in K:
+        v = \sum_{i = 1}^{n} \alpha_i v_i
+    \end{equation*}
+
+    Zdefiniujmy
+
+    \begin{equation*}
+        \varphi(v) := \sum_{i = 1}^{n} \alpha_i w_i
+    \end{equation*}
+
+    Należy pokazać:
+    \begin{enumerate}
+        \item
+            $ \varphi $ - liniowe
+        \item $\varphi(v_1) = w_1 ~~ \forall ~ i = 1 \ldots n $
+    \end{enumerate}
+
+    \large{\textbf{Ad 1.}} \\
+    Niech $ x, y \in V; ~~~~\alpha, \beta \in \mathbb{R} $ \\
+    Należy pokazać, że $ \varphi( \alpha x + \beta y ) =
+    \alpha \varphi(x) + \beta \varphi(y) $ \\
+
+    Ponieważ $ v_1, \ldots, v_n $ jest bazą $ V $ to
+    \begin{equation*}
+        \exists ! ~~ \alpha_1, \ldots, \alpha_n \in K:
+        x = \sum_{i = 1}^{n} \alpha_i v_i
+    \end{equation*}
+
+    \begin{equation*}
+        \exists ! ~~ \beta_1, \ldots, \beta_n \in K:
+        y = \sum_{i = 1}^{n} \beta_i v_i
+    \end{equation*}
+
+    Wówczas
+    \begin{equation*}
+        \alpha x + \beta y = \alpha \sum_{i = 1}^{n} \alpha_i v_i
+        + \beta \sum_{i = 1}^{n} \beta_i v_i
+        = \sum_{i = 1}^{n} ( \alpha \alpha_i + \beta \beta_i )v_i
+    \end{equation*}
+
+    Oraz to przedstawienie jest jednoznaczne, to znaczy:
+
+    \begin{equation*}
+        \begin{aligned}
+            \varphi( \alpha x + \beta y ) & = \varphi (  \sum_{i = 1}^{n} ( \alpha \alpha_i + \beta \beta_i )v_i )
+            \defeq{$\varphi$} \sum_{i = 1}^{n} ( \alpha \alpha_i + \beta \beta_i )w_i\\
+            & = \alpha \sum_{i = 1}^{n} \alpha_i v_i + \beta \sum_{i = 1}^{n} \beta_i v_i
+            \defeq{} \alpha \varphi(x) + \beta \varphi(y)
+        \end{aligned}
     \end{equation*}
 
 \end{document}
